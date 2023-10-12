@@ -16,7 +16,7 @@ struct NotificationDemoApp: App {
                 .onAppear {
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
                         if success {
-                            print("Notifications are on!")
+                            print("Notifs are on!")
                         } else if let error = error {
                             print(error)
                         }
