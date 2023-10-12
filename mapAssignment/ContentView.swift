@@ -39,7 +39,7 @@ struct ContentView: View {
             }
             // get notification button
             Button("Push to get notification (wait 5 seconds)") {
-                scheduleNotification()
+                getNotification()
             }
         }
     }
@@ -63,14 +63,14 @@ struct ContentView: View {
     }
 
     // get notification
-    func scheduleNotification() {
+    func getNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Hello!"
-        content.body = "This is a local notification."
+        content.title = "hello!"
+        content.body = "this is a local notification."
         content.sound = UNNotificationSound.default
         content.badge = 1
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
